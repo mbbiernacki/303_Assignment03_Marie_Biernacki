@@ -1,6 +1,6 @@
 #pragma once
 /*
-PART 1
+PART 1 - DONE
 create Queue (using linked list or circular array) -- SHOULD BE TEMPLATE CLASS
 	push()
 	pop()
@@ -16,7 +16,7 @@ write new function called
 		takes the element at the front of the queue to the rear of the queue
 		use functions push, front, pop
 
-PART 2
+PART 2 -- DONE
 write recursive linear search function
 finds the last occurrence of a target in a vector, NOT the first
 modify the code from Lecture 9, Slide 30
