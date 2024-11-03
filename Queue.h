@@ -130,6 +130,7 @@ public:
 		return false;
 	}
 
+	//displays all elements in the queue
 	void displayQueue() {
 		
 		if (empty()) {
