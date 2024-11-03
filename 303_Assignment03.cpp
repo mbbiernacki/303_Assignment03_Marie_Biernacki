@@ -14,7 +14,11 @@ int main()
 {
 	//PART 1: create a Queue using linked list as base, display elements using given functions
 	
+	cout << "------- TESTING QUEUE ------" << endl;
+
 	Queue<int> queue; //create queue of integers
+
+	cout << "Is the queue empty? " << (queue.empty() ? "Yes" : "No") << endl; //expected: yes
 
 	//push 10 values onto the queue
 	queue.push(10);
@@ -29,14 +33,15 @@ int main()
 	queue.push(23);
 
 
-	cout << "------- TESTING QUEUE ------" << endl;
-	cout << "Elements in queue:" << endl;
+	
+	cout << "\nElements in queue:" << endl;
 
 	queue.displayQueue();
 	//expected output: 10, 45, 1, 7, 50, 25, 99, 40, 30, 23
 
+	cout << "\n\nIs the queue empty? " << (queue.empty() ? "Yes" : "No") << endl; //expected: no
+
 	cout << endl;
-	cout << "\n";
 
 	//testing move to rear
 	cout << "Testing move_to_rear()..." << endl;
@@ -60,7 +65,7 @@ int main()
 	vectorTest.push_back("B");
 	vectorTest.push_back("C");
 
-	cout << "------- TESTING LINEAR SEARCH ------" << endl;
+	cout << "\n------- TESTING LINEAR SEARCH ------" << endl;
 	cout << "Vector contains the following: " << endl;
 	for (int i = 0; i < vectorTest.size(); i++) {
 		cout << vectorTest[i] << " ";
@@ -77,7 +82,7 @@ int main()
 
 
 	//PART 3: Insertion Sort on Queue of Integers
-	cout << "\n------- TESTING ASCENDING INSERTION SORT ON QUEUE ------" << endl;
+	cout << "\n\n------- TESTING ASCENDING INSERTION SORT ON QUEUE ------" << endl;
 
 	cout << "Current Queue: " << endl;
 	
