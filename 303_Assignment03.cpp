@@ -1,7 +1,7 @@
 //CS303 ASSIGNMENT 03: Queue, Linear Search, and Insertion Sort
 //NAME: Marie Biernacki
-//CREATED: November 3rd, 2024
-//DUE: November 7th, 2024
+//CREATED: November 3rd 2024
+//DUE: November 7th 2024
 
 #include "Queue.h"
 #include "Functions.h"
