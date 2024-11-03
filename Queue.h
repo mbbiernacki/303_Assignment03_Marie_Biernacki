@@ -146,6 +146,61 @@ public:
 		}
 
 	}
+	
 
+	//sorts a given queue in ascending order
+	void insertion_sort() {
+		
+		if (empty()) {
+			cout << "ERROR: insertion_sort() called on empty queue." << endl;
+			return;
+		}
 
+		//queue to store sorted elements
+		Queue<T> sortedQueue;
+
+		//while loop to process each element in the original queue
+		while (!empty()) {
+			//set the top item in the queue to key and remove
+			T key = front().data;
+			pop();
+
+			bool inserted = false;
+
+			//temporary queue to hold elements while finding the insertion spot
+			Queue<T> tempQueue;
+
+			//loop through the sortedQueue if it is not empty
+			while (!sortedQueue.empty()) {
+				//if insertion is false and the key is less than the front of the sortedQueue
+				if (!inserted && key < sortedQueue.front().data) {
+					
+					tempQueue.push(Item_Type<T>(key)); //add key to the tempQueue
+					inserted = true; // set insertion to true (an element was inserted)
+				}
+				
+				tempQueue.push(sortedQueue.front()); //move the front of sortedQueue to tempQueue
+				sortedQueue.pop(); //remove the front from sortedQueue
+			}
+
+			//if key is the largest, add it at the end of tempQueue
+			if (!inserted) {
+				tempQueue.push(Item_Type<T>(key));
+			}
+
+			//move all elements back from tempQueue to sortedQueue
+			while (!tempQueue.empty()) {
+				sortedQueue.push(tempQueue.front());
+				tempQueue.pop();
+			}
+		}
+
+		//after the sortedQueue is done, add the elements back to the original queue
+		while (!sortedQueue.empty()) {
+			push(sortedQueue.front());
+			sortedQueue.pop();
+		}
+
+	}
+	
 };

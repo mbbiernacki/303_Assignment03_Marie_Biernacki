@@ -1,8 +1,9 @@
-// 303_Assignment03.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//CS303 ASSIGNMENT 03: Queue, Linear Search, and Insertion Sort
+//NAME: Marie Biernacki
+//CREATED: November 3rd, 2024
+//DUE: November 7th, 2024
 
 #include "Queue.h"
-
 #include "Functions.h"
 
 #include <iostream>
@@ -11,10 +12,7 @@ using namespace std;
 
 int main()
 {
-	/* PART 1
-
-	//instantiate the queue with integers and push 10 values onto the queue
-	//display all the elements in a queue only using the above functions
+	//PART 1: create a Queue using linked list as base, display elements using given functions
 	
 	Queue<int> queue; //create queue of integers
 
@@ -29,6 +27,10 @@ int main()
 	queue.push(40);
 	queue.push(30);
 	queue.push(23);
+
+
+	cout << "------- TESTING QUEUE ------" << endl;
+	cout << "Elements in queue:" << endl;
 
 	//display all of the elements in the queue, only using defined functions
 	for (int i = 0; i < queue.size(); i++){
@@ -54,7 +56,7 @@ int main()
 	//testing move to rear
 	cout << "Testing move_to_rear()..." << endl;
 	queue.move_to_rear();
-	
+	cout << "\nElements in queue:" << endl;
 	//display all of the elements in the queue, only using defined functions
 	for (int i = 0; i < queue.size(); i++) {
 
@@ -76,7 +78,7 @@ int main()
 	cout << endl;
 	cout << "\n";
 
-	*/
+	
 
 	//PART 2: Recursive Linear Search
 	vector<string> vectorTest;
@@ -87,9 +89,8 @@ int main()
 	vectorTest.push_back("B");
 	vectorTest.push_back("C");
 
-	cout << "\n\n" << endl;
 	cout << "------- TESTING LINEAR SEARCH ------" << endl;
-	cout << "\nVector contains the following: " << endl;
+	cout << "Vector contains the following: " << endl;
 	for (int i = 0; i < vectorTest.size(); i++) {
 		cout << vectorTest[i] << " ";
 	}
@@ -100,5 +101,58 @@ int main()
 	int position = linear_search(vectorTest, target, vectorTest.size() - 1);
 
 	cout << "The last occurrence of B in the vector is at index: " << position << endl; //expected output: 2
+
+
+
+
+	//PART 3: Insertion Sort on Queue of Integers
+	cout << "\n------- TESTING ASCENDING INSERTION SORT ON QUEUE ------" << endl;
+
+	cout << "Current Queue: " << endl;
+	
+	//display all of the elements in the queue, only using defined functions
+	for (int i = 0; i < queue.size(); i++) {
+
+		//create placeholder to store item at the front of the queue and print
+		int element = queue.front().data;
+		cout << element << " ";
+
+		//remove the item at the front of the queue 
+		//ensures the next value will be printed
+		queue.pop();
+
+		//push the original element back onto the queue 
+		//ensures the queue size stays the same, therefore all values will print
+		queue.push(element);
+	}
+
+	//expected output: 45, 1, 7, 50, 25, 99, 40, 30, 23, 10
+
+
+
+	//call insertion_sort
+	queue.insertion_sort();
+
+	cout << "\n\nQueue After Inserton Sort: " << endl;
+
+	//display all of the elements in the queue, only using defined functions
+	for (int i = 0; i < queue.size(); i++) {
+
+		//create placeholder to store item at the front of the queue and print
+		int element = queue.front().data;
+		cout << element << " ";
+
+		//remove the item at the front of the queue 
+		//ensures the next value will be printed
+		queue.pop();
+
+		//push the original element back onto the queue 
+		//ensures the queue size stays the same, therefore all values will print
+		queue.push(element);
+	}
+
+	//expected output: 1, 7, 10, 23, 25, 30, 40, 45, 50, 99
+
+	cout << "\n\n";
 
 }
