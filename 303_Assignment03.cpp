@@ -32,22 +32,7 @@ int main()
 	cout << "------- TESTING QUEUE ------" << endl;
 	cout << "Elements in queue:" << endl;
 
-	//display all of the elements in the queue, only using defined functions
-	for (int i = 0; i < queue.size(); i++){
-		
-		//create placeholder to store item at the front of the queue and print
-		int element = queue.front().data;
-		cout << element << " ";
-		
-		//remove the item at the front of the queue 
-		//ensures the next value will be printed
-		queue.pop();
-		
-		//push the original element back onto the queue 
-		//ensures the queue size stays the same, therefore all values will print
-		queue.push(element);
-	}
-
+	queue.displayQueue();
 	//expected output: 10, 45, 1, 7, 50, 25, 99, 40, 30, 23
 
 	cout << endl;
@@ -57,22 +42,8 @@ int main()
 	cout << "Testing move_to_rear()..." << endl;
 	queue.move_to_rear();
 	cout << "\nElements in queue:" << endl;
-	//display all of the elements in the queue, only using defined functions
-	for (int i = 0; i < queue.size(); i++) {
 
-		//create placeholder to store item at the front of the queue and print
-		int element = queue.front().data;
-		cout << element << " ";
-
-		//remove the item at the front of the queue 
-		//ensures the next value will be printed
-		queue.pop();
-
-		//push the original element back onto the queue 
-		//ensures the queue size stays the same, therefore all values will print
-		queue.push(element);
-	}
-
+	queue.displayQueue();
 	//expected output: 45, 1, 7, 50, 25, 99, 40, 30, 23, 10
 
 	cout << endl;
@@ -110,22 +81,8 @@ int main()
 
 	cout << "Current Queue: " << endl;
 	
-	//display all of the elements in the queue, only using defined functions
-	for (int i = 0; i < queue.size(); i++) {
-
-		//create placeholder to store item at the front of the queue and print
-		int element = queue.front().data;
-		cout << element << " ";
-
-		//remove the item at the front of the queue 
-		//ensures the next value will be printed
-		queue.pop();
-
-		//push the original element back onto the queue 
-		//ensures the queue size stays the same, therefore all values will print
-		queue.push(element);
-	}
-
+	
+	queue.displayQueue();
 	//expected output: 45, 1, 7, 50, 25, 99, 40, 30, 23, 10
 
 
@@ -135,22 +92,7 @@ int main()
 
 	cout << "\n\nQueue After Inserton Sort: " << endl;
 
-	//display all of the elements in the queue, only using defined functions
-	for (int i = 0; i < queue.size(); i++) {
-
-		//create placeholder to store item at the front of the queue and print
-		int element = queue.front().data;
-		cout << element << " ";
-
-		//remove the item at the front of the queue 
-		//ensures the next value will be printed
-		queue.pop();
-
-		//push the original element back onto the queue 
-		//ensures the queue size stays the same, therefore all values will print
-		queue.push(element);
-	}
-
+	queue.displayQueue();
 	//expected output: 1, 7, 10, 23, 25, 30, 40, 45, 50, 99
 
 	cout << "\n\n";

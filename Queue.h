@@ -129,6 +129,30 @@ public:
 			return true;
 		return false;
 	}
+
+	void displayQueue() {
+		
+		if (empty()) {
+			cout << "ERROR: displayQueue() called on empty queue" << endl;
+			return;
+		}
+
+		for (int i = 0; i < size(); i++) {
+
+			//create placeholder to store item at the front of the queue and print
+			int element = front().data;
+			cout << element << " ";
+
+			//remove the item at the front of the queue 
+			//ensures the next value will be printed
+			pop();
+
+			//push the original element back onto the queue 
+			//ensures the queue size stays the same, therefore all values will print
+			push(element);
+		}
+	
+	}
 	
 	//takes the element at the front of the queue, moves to the rear of the queue
 	void move_to_rear() {
